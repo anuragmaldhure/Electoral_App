@@ -4,12 +4,38 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body>	
+	<div style = "text-align:center; background-color:gray">
+	<br/><br/>
+	<h1>User Registration Page</h1>
+	<br/><br/>
+	</div>
+	<div style = "text-align:center; background-color:lightgray">
+	<br/><br/>
 	<form method="post" action="signup">
+	
+		First name: <input type="text" name="firstName"/> <br/><br/>
+		Last name: <input type="text" name="lastName"/> <br/><br/>
 		Email: <input type="text" name="email"/> <br/><br/>
 		Password: <input type="password" name="passwd"/> <br/><br/>
-		<input type="submit" value="Sign In"/>
-		<a href="register.html">Sign Up</a>
+		Birth date: <input type="date" name="birth"/> <br/><br/>
+		<label for="role">Select your role:</label>
+		<select name="role">
+		    <option value="Admin">Admin</option>
+		    <option value="User">User</option>
+		</select><br/><br/><br/><br/>
+		<input type="submit" value="SignUp"/>
+		<br/><br/>
+		<a href="index.html">Go back to Login Page</a>
 	</form>
+	<br/><br/>
+	</div>
 </body>
+<footer>
+	<div style = "text-align:center; background-color:gray">
+		<br/>
+		<h3>Electoral App for Sunbeam Sabha 2024 || Developed by @nurag</h3>
+		<br/>
+	</div>
+</footer>
 </html>

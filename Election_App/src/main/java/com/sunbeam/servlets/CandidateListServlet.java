@@ -36,16 +36,24 @@ public class CandidateListServlet extends HttpServlet {
 		out.println("<html>");
 		out.println("<head>");
 		out.println("<title>Candidates</title>");
+		out.println("<div style = \"text-align:center; background-color:gray\"><br/><br/> <h1>Hello Voter! Please vote for one candidate below</h1><br/><br/> </div>");
 		out.println("</head>");
 		out.println("<body>");
-		out.println("Hello, Voter! <hr/>");
+		out.println("<div style = \"text-align:center; background-color:lightgray\"><br/><br/>");
 		out.println("<form method='post' action='vote'>");
 		for (Candidate c : list)
 			out.printf("<input type='radio' name='candidate' value='%s'/> %s - %s <br/>\n", 
 											c.getId(), c.getName(), c.getParty());
-		out.println("<input type='submit' value='Vote'/>");
+		out.println("<br/><br/><input type='submit' value='Vote'/><br/><br/></div>");
 		out.println("</form>");
 		out.println("</body>");
+		out.println("<footer>\n"
+				+ "	<div style = \"text-align:center; background-color:gray\">\n"
+				+ "		<br/>\n"
+				+ "		<h3>Electoral App for Sunbeam Sabha 2024 || Developed by @nurag</h3>\n"
+				+ "		<br/>\n"
+				+ "	</div>\n"
+				+ "</footer>");
 		out.println("</html>");
 
 	}

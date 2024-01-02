@@ -66,7 +66,8 @@ public class UserDao extends Dao implements IUserDao{
 			stmt.setString(2, user.getLastName());
 			stmt.setString(3, user.getEmail());
 			stmt.setString(4, user.getPassword());
-			stmt.setDate(5, user.getBirth());
+			
+			stmt.setDate(5,new java.sql.Date(user.getBirth().getTime()));
 			stmt.setInt(6, user.getStatus());
 			stmt.setString(7, user.getRole());
 			int cnt = stmt.executeUpdate();

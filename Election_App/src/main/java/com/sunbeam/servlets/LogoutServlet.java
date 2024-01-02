@@ -25,11 +25,20 @@ public class LogoutServlet extends HttpServlet {
 		out.println("<html>");
 		out.println("<head>");
 		out.println("<title>Logout</title>");
+		out.println("<div style = \"text-align:center; background-color:gray\"><br/><br/> <h1>See you soon!</h1><br/><br/> </div>");
+		out.println("<div style = \"text-align:center; background-color:lightgray\"><br/><br/>");
 		out.println("</head>");
 		out.println("<body>");
-		out.println("Thank you. <br/><br/>");
-		out.println("<a href='index.html'>Login Again</a>");
+		out.println("Thank you! <br/><br/>");
+		out.println("<a href='index.html'>Login Again</a><br/><br/></div>");
 		out.println("</body>");
+		out.println("<footer>\n"
+				+ "	<div style = \"text-align:center; background-color:gray\">\n"
+				+ "		<br/>\n"
+				+ "		<h3>Electoral App for Sunbeam Sabha 2024 || Developed by @nurag</h3>\n"
+				+ "		<br/>\n"
+				+ "	</div>\n"
+				+ "</footer>");
 		out.println("</html>");
 	}
 

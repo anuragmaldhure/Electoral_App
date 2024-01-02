@@ -53,8 +53,17 @@ public class LoginServlet extends HttpServlet{
 					resp.sendRedirect("result"); // go to next servlet for admin
 			} 
 			else {
-				out.println("Invalid email or password. <br/><br/>");
-				out.println("<a href='index.html'>Login Again</a>");
+				out.println("<div style = \"text-align:center; background-color:gray\"><br/><br/> <h1>Sorry! You were not logged in</h1><br/><br/> </div>");
+				out.println("<div style = \"text-align:center; background-color:lightgray\"><br/><br/>");
+				out.println("<br/><br/>Invalid email or password. <br/><br/>");
+				out.println("<a href='index.html'>Login Again</a><br/><br/></div>");
+				out.println("<footer>\n"
+						+ "	<div style = \"text-align:center; background-color:gray\">\n"
+						+ "		<br/>\n"
+						+ "		<h3>Electoral App for Sunbeam Sabha 2024 || Developed by @nurag</h3>\n"
+						+ "		<br/>\n"
+						+ "	</div>\n"
+						+ "</footer>");
 			}
 			out.println("</body>");
 			out.println("</html>");
