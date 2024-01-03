@@ -63,9 +63,14 @@ public class LoginServlet extends HttpServlet{
 				resp.addCookie(c);
 				
 				if(user.getRole().equals("voter"))
-					resp.sendRedirect("candlist"); // go to next servlet for voter
-				else // user.getRole().equals("admi")
-					resp.sendRedirect("result"); // go to next servlet for admin
+					resp.sendRedirect(resp.encodeRedirectURL("candlist")); // go to next servlet for voter
+				
+					//resp.sendRedirect("candlist"); // go to next servlet for voter
+				else 																// user.getRole().equals("admi")
+					resp.sendRedirect(resp.encodeRedirectURL("result")); // go to next servlet for admin
+				
+				
+					//resp.sendRedirect("result"); // go to next servlet for admin
 			} 
 			else {
 				out.println("<div style = \"text-align:center; background-color:gray\"><br/><br/> <h1>Sorry! You were not logged in</h1><br/><br/> </div>");

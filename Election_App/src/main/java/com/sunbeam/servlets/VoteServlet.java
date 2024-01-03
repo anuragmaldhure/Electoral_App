@@ -80,7 +80,12 @@ public class VoteServlet extends HttpServlet {
 			out.println("Your vote is registered successfully. <br/><br/>");
 		}
 		
-		out.println("<a href='logout'>Sign Out</a><br/><br/></div>");
+		//out.println("<a href='logout'>Sign Out</a><br/><br/></div>");
+		
+		//URL Tracking
+		String url = resp.encodeURL("logout");
+		out.printf("<a href='%s'>Sign Out</a>", url);
+		
 		out.println("</body>");
 		out.println("<footer>\n"
 				+ "	<div style = \"text-align:center; background-color:gray\">\n"
