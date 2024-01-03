@@ -10,6 +10,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.sunbeam.pojos.User;
 import com.sunbeam.daos.*;
@@ -49,10 +50,16 @@ public class LoginServlet extends HttpServlet{
 			out.println("<body>");
 			if(success) {
 				
+				// add user object into the session
+				HttpSession session = req.getSession();
+				session.setAttribute("curUser", user);
+				
+				
 				//Cookie client side implemenetation (javax.servlet.http.Cookie)
 				String uname = user.getFirstName() + "_" + user.getLastName();
 				Cookie c = new Cookie("username", uname);
-				c.setMaxAge(20);
+				//in seconds
+				c.setMaxAge(120);
 				resp.addCookie(c);
 				
 				if(user.getRole().equals("voter"))
