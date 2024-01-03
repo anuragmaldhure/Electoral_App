@@ -74,7 +74,7 @@ public class ResultServlet extends HttpServlet{
 		for (Candidate c : list)
 		    out.printf("<tr> <td> %s </td><td> %s </td><td> %s </td><td> %s </td>"
 		                + "<td><a href='candedit?id=%d'> <img width='28' height='28' src='images/edit.png' alt='Edit'/> </a></td>"
-		                + "<td><a href='canddel?id=%d'> <img width='28' height='28' src='images/delete.png' alt='Delete'/> </a></td></tr>\n", 
+		                + "<td><a href='canddel?id=%d'> <img width='28' height='28' src='images/delete.png' alt='Delete'/> </a></td></tr>", 
 		            c.getId(), c.getName(), c.getParty(), c.getVotes(), c.getId(), c.getId());
 
 
@@ -83,6 +83,11 @@ public class ResultServlet extends HttpServlet{
 		out.println("</table>");
 		out.println("</center>");
 		out.println("<br/><br/><a href='announce'>Announce</a>");
+		
+		String msg = (String) req.getAttribute("message");
+		if(msg != null)
+			out.println("<br/><br/>" + msg);
+		
 		out.println("<a href='logout'>Logout</a><br/><br/></div>");
 		out.println("</body>");
 		out.println("<footer>\n"
