@@ -84,9 +84,17 @@ public class ResultServlet extends HttpServlet{
 		out.println("</center>");
 		out.println("<br/><br/><a href='announce'>Announce</a>");
 		
+		
+		
 		String msg = (String) req.getAttribute("message");
 		if(msg != null)
 			out.println("<br/><br/>" + msg);
+		
+		
+		
+		out.println("<br/><a href='annoucement.html'>Announcement</a>");
+		
+		
 		
 		out.println("<a href='logout'>Logout</a><br/><br/></div>");
 		out.println("</body>");
