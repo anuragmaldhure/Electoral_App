@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 
 import com.sunbeam.daos.CandidateDao;
@@ -36,7 +37,20 @@ public class ResultServlet extends HttpServlet{
 		out.println("<html>");
 		out.println("<head>");
 		out.println("<title>Candidates</title>");
-		out.println("<div style = \"text-align:center; background-color:gray\"><br/><br/> <h1>Hello Admin! The results of the election are as follows</h1><br/><br/> </div>");
+		
+		
+		String uname = "";
+		Cookie[] arr = req.getCookies();
+		if(arr != null) {
+			for (Cookie c : arr) {
+				if(c.getName().equals("username")) {
+					uname = c.getValue();
+					break;
+				}
+			}
+		}
+		
+		out.printf("<div style = \"text-align:center; background-color:gray\"><br/><br/> <h1>Hello  - %s ! The status of the election is as follows</h1><br/><br/> </div>",uname);
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<div style = \"text-align:center; background-color:lightgray\"><br/><br/>");
@@ -51,9 +65,19 @@ public class ResultServlet extends HttpServlet{
 		out.println("<th colspan = 2> action </th>");
 		out.println("</tr>");
 		out.println("</thead>");
+//		for (Candidate c : list)
+//			out.printf("<tr> <td> %s </td><td> %s </td><td> %s </td><td> %s </td>"
+//					+ "<td><a href='candedit?id=%d'> <img width='28' height='28' src='images/edit.png' alt='Edit'/> </a></td>"
+//					+ "<td><a href='canddel?id=%d'> <img width='28' height='28' src='images/delete.png' alt='Delete'/> </a></td><"
+//					+ "/tr>\n", 
+//			c.getId(), c.getName(), c.getParty(), c.getVotes());
 		for (Candidate c : list)
-			out.printf("<tr> <td> %s </td><td> %s </td><td> %s </td><td> %s </td><td><a href='edit'>Edit</a></td><td><a href='delete'>Delete</a></td></tr>\n", 
-			c.getId(), c.getName(), c.getParty(), c.getVotes());
+		    out.printf("<tr> <td> %s </td><td> %s </td><td> %s </td><td> %s </td>"
+		                + "<td><a href='candedit?id=%d'> <img width='28' height='28' src='images/edit.png' alt='Edit'/> </a></td>"
+		                + "<td><a href='canddel?id=%d'> <img width='28' height='28' src='images/delete.png' alt='Delete'/> </a></td></tr>\n", 
+		            c.getId(), c.getName(), c.getParty(), c.getVotes(), c.getId(), c.getId());
+
+
 //			out.printf("<input type='radio' name='candidate' value='%s'/> %s - %s <br/>\n", 
 //											c.getId(), c.getName(), c.getParty());
 		out.println("</table>");

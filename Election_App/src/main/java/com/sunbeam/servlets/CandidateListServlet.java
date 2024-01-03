@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 
 import com.sunbeam.daos.ICandidateDao;
@@ -36,7 +37,20 @@ public class CandidateListServlet extends HttpServlet {
 		out.println("<html>");
 		out.println("<head>");
 		out.println("<title>Candidates</title>");
-		out.println("<div style = \"text-align:center; background-color:gray\"><br/><br/> <h1>Hello Voter! Please vote for one candidate below</h1><br/><br/> </div>");
+		
+		//Cookie server side implemenetation (javax.servlet.http.Cookie)
+		String uname = "";
+		Cookie[] arr = req.getCookies();
+		if(arr != null) {
+			for (Cookie c : arr) {
+				if(c.getName().equals("username")) {
+					uname = c.getValue();
+					break;
+				}
+			}
+		}
+		
+		out.printf("<div style = \"text-align:center; background-color:gray\"><br/><br/> <h1>Hello Voter - %s ! Please vote for one candidate below</h1><br/><br/> </div>",uname);
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<div style = \"text-align:center; background-color:lightgray\"><br/><br/>");
