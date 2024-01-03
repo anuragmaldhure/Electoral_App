@@ -82,7 +82,7 @@ public class ResultServlet extends HttpServlet{
 //											c.getId(), c.getName(), c.getParty());
 		out.println("</table>");
 		out.println("</center>");
-		out.println("<br/><br/><a href='announce'>Announce</a>");
+		//out.println("<br/><br/><a href='announce'>Announce</a>");
 		
 		
 		
@@ -92,7 +92,7 @@ public class ResultServlet extends HttpServlet{
 		
 		
 		
-		out.println("<br/><a href='annoucement.html'>Announcement</a>");
+		out.println("<br/><a href='announcement.html'>Announcement</a>");
 		
 		
 		
