@@ -13,7 +13,8 @@
   <session-config>
   	<session-timeout>30</session-timeout>
   	<!-- in minutes -->
-  	 <tracking-mode>URL</tracking-mode> <!-- URL tracking -->
+  	<tracking-mode>COOKIE</tracking-mode>
+  	 <!-- <tracking-mode>URL</tracking-mode> URL tracking -->
   </session-config>
   
 </web-app>

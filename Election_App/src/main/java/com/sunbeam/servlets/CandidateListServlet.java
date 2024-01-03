@@ -54,11 +54,11 @@ public class CandidateListServlet extends HttpServlet {
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<div style = \"text-align:center; background-color:lightgray\"><br/><br/>");
-		//out.println("<form method='post' action='vote'>");
+		out.println("<form method='post' action='vote'>");
 		
 		//URL tracking
-		String url = resp.encodeURL("vote");
-		out.printf("<form method='post' action='%s'>\n", url);
+//		String url = resp.encodeURL("vote");
+//		out.printf("<form method='post' action='%s'>\n", url);
 		
 		for (Candidate c : list)
 			out.printf("<input type='radio' name='candidate' value='%s'/> %s - %s <br/>\n", 
