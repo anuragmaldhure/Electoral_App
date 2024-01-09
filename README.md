@@ -74,3 +74,27 @@ Project focused on implementing Java EE
 4. Add Announcement msg area in CandidateListServlet
 
 # Electoral App TYPE 2 of 2 (JSP, JSTL JavaBeam and JDBC based)
+
+## Phase 1 - Setting up  DB, JDBC, POJOs and DAOs
+1. Create database named election_webjava
+2. Create tables users and candidates
+3. Add dependency, my-sql-connector jar file 
+4. Write DBUtil class 
+5. Write User POJO and Candidate POJO classes
+6. Write interfaces UserDao and CandidateDao
+7. Write their implementations - UserDaoImpl and CandidateDaoImpl classes
+
+## Phase 2 -Basic pages and functional app using JSP, JSTL and JAVA Bean  
+
+1. Write login.jsp ( User Sign in using email and password ) and understand <jsp:useBean id =“” class =“” scope=“”>
+2. Setup web.xml file - login.jsp as <welcome-file>
+3. Write UserBean.java with user input data state holder and implement business logic methods : public String validateUser() throws SQLException and public String registerUser() throws SQLException
+4. Write CandidateBean.java and implement business logic methods : public List<Candidate> getTop2Candidates() throws SQLException and public LinkedHashMap<String, Integer> fetchPartyAnalysis() throws SQLException 
+5. Write authenticate.jsp for checking user, creating a session and redirecting  
+6. Write register.jsp for new user registration with age validation
+7. Add centralised error handling - Update in web.xml and Write my_err_handler.jsp
+8. Write admin_main.jsp - Displays vote analysis and top 2 candidates
+9. Write candidate_list.jsp - Dummy implementation for now
+10. Write logout.jsp - To invalidate user and destroy current session. Also allow user to re-login
+11. Add cleanup functionalities : public void cleanUp() throws SQLException in UserDaoImpl and CandidateDaoImpl 
+
