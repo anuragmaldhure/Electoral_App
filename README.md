@@ -1,6 +1,6 @@
 Project focused on implementing Java EE
 
-# Electoral App TYPE 1 of 2 (Servlet and JDBC based)
+# Electoral App TYPE 1 (Servlet and JDBC based)
 
 ## Phase 1 : Setup STS Project
 
@@ -73,7 +73,7 @@ Project focused on implementing Java EE
 3. Add Announcement msg area in ResultServlet
 4. Add Announcement msg area in CandidateListServlet
 
-# Electoral App TYPE 2 of 2 (JSP, JSTL JavaBeam and JDBC based)
+# Electoral App TYPE 2 (JSP, JSTL JavaBeam and JDBC based)
 
 ## Phase 1 - Setting up  DB, JDBC, POJOs and DAOs
 1. Create database named election_webjava
