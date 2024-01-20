@@ -1,4 +1,4 @@
-Project focused on implementing Java EE
+Project focused on implementing Java EE fundamentals - Using Servlets
 
 # Electoral App TYPE 1 (Servlet and JDBC based)
 
